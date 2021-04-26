@@ -18,11 +18,25 @@ class Counters extends Component {
         );
     } 
 
+    increment = cid =>{
+        var data = [];
+        for(var i=0 ; i<this.state.counters.length ; ++i){
+            if(this.state.counters[i].id === cid){
+                data[i] = this.state.counters[i];
+                data[i].value++;
+            }
+            else{
+                data[i] = this.state.counters[i];
+            }
+        }
+        this.setState({counters:data});
+    }
 
     render() { 
         return (
         <div>
-            {this.state.counters.map(counter => <Raghav key={counter.id} id={counter.id}  onDlkuchbhinaam={this.handleDlete} value={counter.value}  />)}  
+            {this.state.counters.map(counter =>
+                 <Raghav key={counter.id} onDlkuchbhinaam={this.handleDlete} increment={this.increment} counterData={counter}/>)}  
         </div>
     );
     }
