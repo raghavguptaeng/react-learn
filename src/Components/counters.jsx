@@ -9,11 +9,20 @@ class Counters extends Component {
             {id:4,value:0}
         ]
      }
+    handleDlete = cid =>{
+        const newData = this.state.counters.filter(index => index.id !== cid);
+        this.setState(
+            {
+                counters:newData
+            }
+        );
+    } 
+
+
     render() { 
         return (
         <div>
-            {this.state.counters.map(counter => <Raghav key={counter.id} value={counter.value}  />)}  
-               
+            {this.state.counters.map(counter => <Raghav key={counter.id} id={counter.id}  onDlkuchbhinaam={this.handleDlete} value={counter.value}  />)}  
         </div>
     );
     }

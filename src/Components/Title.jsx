@@ -10,6 +10,7 @@ class Raghav extends Component{
                 <br></br>
                 <span style={this.styles} className = {this.getLabelcolor()}> {this.tellCount()} </span> 
                 <button className = 'btn btn-secondary btn-sm m-22' onClick={this.increment}> increment </button>  
+                <button className = 'btn btn-danger btn-sm m-2' onClick={ ()=>this.props.onDlkuchbhinaam(this.props.id) } >Delete</button>
             </React.Fragment>    
         );
     }
